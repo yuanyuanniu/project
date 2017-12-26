@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--引入properties文件-->
+    <properties resource="database.properties"></properties>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="autoMappingBehavior" value="FULL"></setting>
+    </settings>
+    <typeAliases>
+        <package name="mybatis.entity" ></package>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <!--采用JDBC事务-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--POOLED是mybatis自带的数据源-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"></property>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.user}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--将mapper文件加入到配置文件中-->
+    <mappers>
+        <mapper resource="mybatis/dao/TUserMapper.xml"/>
+        <mapper resource="mybatis/dao/StudentMapper.xml"/>
+        <mapper resource="mybatis/dao/GradeMapper.xml"/>
+       <!-- <mapper resource="File:///D:UserMapper.xml" />-->
+    </mappers>
+</configuration>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdqn.dao.ProductMapper">
+    <resultMap id="productMap" type="Product">
+        <id column="id" property="id"/>
+        <result property="productName" column="productName"/>
+        <result column="quantity" property="quantity"/>
+    </resultMap>
+
+    <select id="quseryAllProduct" resultMap="productMap">
+        SELECT * FROM product
+    </select>
+    <select id="queryQuantityById" resultType="Integer">
+        SELECT quantity FROM product WHERE id=#{id}
+    </select>
+    <update id="updateQuantityById" parameterType="Product">
+        UPDATE product SET quantity=#{quantity} where id=#{id}
+    </update>
+    <insert id="addSale" parameterType="Sale">
+        INSERT INTO sale VALUES
+        (NULL,#{price},#{quantity},#{totalPrice},NOW(),#{userId},#{productId})
+    </insert>
+    <select id="queryPageSale" resultType="Sale">
+        SELECT s.`id`,s.`price`,s.`quantity`,s.`totalPrice`,s.`saleDate`,s.`userId`,s.`productId`,p.`productName`,u.`userName`
+        FROM sale s ,product p ,users u WHERE s.`userId` = u.`id` AND s.`productId` = p.`id` limit #{from},#{pageSize}
+    </select>
+
+
+    <select id="queryCountSale" resultType="Integer">
+        select count(1) from sale
+    </select>
+
+</mapper>

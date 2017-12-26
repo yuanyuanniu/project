@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdqn.dao.GradeMapper">
+    <resultMap id="gradeMap" type="Grade">
+        <id column="id" property="id"></id>
+        <result property="gradeName" column="grade_name"/>
+        <result column="create_date" property="createDate"/>
+    </resultMap>
+    <select id="queryAll" resultMap="gradeMap">
+        SELECT * FROM grade ORDER BY create_date DESC
+    </select>
+    <select id="queryGradeById" parameterType="Integer" resultMap="gradeMap">
+        SELECT * from grade where id=#{id}
+    </select>
+
+    <delete id="deleteGradeById" parameterType="Integer">
+        delete from grade where id=#{id}
+    </delete>
+
+    <delete id="deleteGradeByIds" parameterType="Integer">
+        delete from grade where id IN
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <insert id="addGrade" parameterType="Grade" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO grade VALUES (NULL ,#{gradeName} ,now() ,#{details})
+    </insert>
+    <update id="updateGrade" parameterType="Grade">
+        UPDATE grade
+        SET details=#{details}
+        where
+        id=#{id}
+    </update>
+
+
+</mapper>

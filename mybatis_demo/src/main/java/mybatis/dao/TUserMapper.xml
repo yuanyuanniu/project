@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.dao.TUserMapper">
+
+    <select id="queryCount" resultType="int">
+        SELECT COUNT(1) FROM t_user
+    </select>
+
+
+    <select id="queryAll" resultMap="userMap">
+        SELECT * FROM t_user
+    </select>
+    <resultMap id="userMap" type="TUser">
+    <id column="id" property="id"/>
+    <result column="user_name" property="userName"/>
+    <result column="password" property="password"/>
+    <result column="nick_name" property="nickName"/>
+    </resultMap>
+
+    <select id="getUserListByUserName" parameterType="TUser" resultMap="userMap">
+        SELECT * FROM t_user WHERE user_name LIKE CONCAT('%',#{userName},'%')
+    </select>
+    <select id="getUserListByUserNameAndNickName"
+            parameterType="TUser" resultMap="userMap">
+        SELECT * FROM t_user
+        WHERE user_name LIKE CONCAT('%',#{userName},'%')
+        AND nick_name LIKE CONCAT('%',#{nickName},'%')
+    </select>
+    <select id="getUserListByUserNameAndNickName_if" parameterType="TUser" resultMap="userMap">
+        SELECT * FROM t_user
+        WHERE user_name LIKE CONCAT('%',#{userName},'%')
+        <if test="nickName!=null and nickName!=''">
+            AND nick_name LIKE CONCAT('%',#{nickName},'%')
+        </if>
+    </select>
+    <select id="getUserListByMap" parameterType="map" resultMap="userMap">
+        SELECT * FROM t_user
+        WHERE user_name LIKE CONCAT('%',#{userName},'%')
+        AND nick_name LIKE CONCAT('%',#{nickName},'%')
+    </select>
+
+    <insert id="addTUser" parameterType="TUser">
+        INSERT INTO t_user VALUES (NULL,#{userName},#{password},#{nickName})
+    </insert>
+
+    <update id="updateTUser" parameterType="TUser">
+        UPDATE t_user SET
+        user_name=#{userName},
+        PASSWORD=#{password},
+        nick_name=#{nickName}
+        WHERE
+        id=#{id}
+    </update>
+
+    <update id="updatePassword" >
+        UPDATE t_user SET PASSWORD=#{password}
+        WHERE
+        id=#{id}
+    </update>
+
+    <delete id="deleteTUserById" parameterType="Integer">
+        DELETE FROM t_user WHERE id=#{id}
+    </delete>
+    <select id="getUserListByUserNameAndNickName_where" parameterType="TUser" resultMap="userMap">
+        SELECT * FROM t_user
+        <where>
+          <if test="userName!=null and userName!=''">
+             AND user_name LIKE CONCAT('%',#{userName},'%')
+          </if>
+          <if test="nickName!=null and nickName!=''">
+            AND nick_name LIKE CONCAT('%',#{nickName},'%')
+         </if>
+        </where>
+    </select>
+</mapper>
+
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis.dao.GradeMapper">
+    <resultMap id="gradeMap" type="Grade">
+        <id property="id" column="id"/>
+        <result property="gradeName" column="grade_name"/>
+        <collection property="studentList" resultMap="studentMap"/>
+    </resultMap>
+    <resultMap id="studentMap" type="Student">
+        <id property="id" column="s_id"/>
+        <result property="studentName" column="student_name"/>
+    </resultMap>
+    <select id="queryGradeById" resultType="Grade">
+        SELECT g.`id` ,g.`grade_name`,s.`student_name`,s.`id` s_id  FROM grade g,student s WHERE g.`id`=s.`grade_id` AND g.`id`=#{id}
+    </select>
+
+</mapper>

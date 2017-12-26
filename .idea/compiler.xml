@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bootstrop" />
+        <module name="bootstrop1" />
+        <module name="bootstrop10" />
+        <module name="bootstrop3" />
+        <module name="bootstrop4" />
+        <module name="bootstrop5" />
+        <module name="bootstrop6" />
+        <module name="bootstrop7" />
+        <module name="bootstrop8" />
+        <module name="bootstrop9" />
+        <module name="mybatisspringdemo" />
+        <module name="pages" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bootstrop" target="1.7" />
+      <module name="bootstrop1" target="1.7" />
+      <module name="bootstrop10" target="1.7" />
+      <module name="bootstrop2" target="1.7" />
+      <module name="bootstrop3" target="1.7" />
+      <module name="bootstrop4" target="1.7" />
+      <module name="bootstrop5" target="1.7" />
+      <module name="bootstrop6" target="1.7" />
+      <module name="bootstrop7" target="1.7" />
+      <module name="bootstrop8" target="1.7" />
+      <module name="bootstrop9" target="1.7" />
+      <module name="demo08" target="1.7" />
+      <module name="HelloSpring" target="1.7" />
+      <module name="jflkd" target="1.7" />
+      <module name="MavenProject" target="1.7" />
+      <module name="MavenProject1" target="1.7" />
+      <module name="mybatis-spring-demo" target="1.7" />
+      <module name="mybatis_demo" target="1.7" />
+      <module name="mybatisspringdemo" target="1.7" />
+      <module name="pages" target="1.7" />
+      <module name="springMVC000" target="1.7" />
+      <module name="StuManagement" target="1.7" />
+      <module name="stuManagement" target="1.7" />
+      <module name="Users" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

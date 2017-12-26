@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:/workplace/bootstrop/bootstrop.iml" filepath="D:/workplace/bootstrop/bootstrop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop1/bootstrop1.iml" filepath="$PROJECT_DIR$/bootstrop1/bootstrop1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop10/bootstrop10.iml" filepath="$PROJECT_DIR$/bootstrop10/bootstrop10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop3/bootstrop3.iml" filepath="$PROJECT_DIR$/bootstrop3/bootstrop3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop4/bootstrop4.iml" filepath="$PROJECT_DIR$/bootstrop4/bootstrop4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop5/bootstrop5.iml" filepath="$PROJECT_DIR$/bootstrop5/bootstrop5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop6/bootstrop6.iml" filepath="$PROJECT_DIR$/bootstrop6/bootstrop6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop7/bootstrop7.iml" filepath="$PROJECT_DIR$/bootstrop7/bootstrop7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop8/bootstrop8.iml" filepath="$PROJECT_DIR$/bootstrop8/bootstrop8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrop9/bootstrop9.iml" filepath="$PROJECT_DIR$/bootstrop9/bootstrop9.iml" />
+      <module fileurl="file://D:/pages/pages/pages.iml" filepath="D:/pages/pages/pages.iml" />
+    </modules>
+  </component>
+</project>
